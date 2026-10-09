@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 144">
+  <g fill="#1b1916" opacity="0.035">
+    <path d="M4 4h18l20 20V4h18v40H42L22 24v20H4z M28 20h11v5H28z"/>
+    <path transform="translate(96 0)" d="M4 4h18l20 20V4h18v40H42L22 24v20H4z M28 20h11v5H28z"/>
+    <path transform="translate(48 72)" d="M4 4h18l20 20V4h18v40H42L22 24v20H4z M28 20h11v5H28z"/>
+    <path transform="translate(144 72)" d="M4 4h18l20 20V4h18v40H42L22 24v20H4z M28 20h11v5H28z"/>
+  </g>
+</svg>
