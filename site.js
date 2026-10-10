@@ -293,7 +293,7 @@ const createBookingModal = () => {
             company_website: values.company_website || ""
         };
 
-        const mailto = `mailto:hello@neefstudios.co.uk?subject=${encodeURIComponent(`Booking enquiry: ${service}`)}&body=${encodeURIComponent(body)}`;
+        const mailto = `mailto:Neefstudios.uk@gmail.com?subject=${encodeURIComponent(`Booking enquiry: ${service}`)}&body=${encodeURIComponent(body)}`;
 
         status.textContent = "Sending your enquiry…";
         if (submitButton) {

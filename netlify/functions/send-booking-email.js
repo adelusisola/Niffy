@@ -77,7 +77,7 @@ exports.handler = async (event) => {
       },
       body: JSON.stringify({
         from: process.env.RESEND_FROM_EMAIL,
-        to: [process.env.BOOKING_EMAIL_TO || "hello@neefstudios.co.uk"],
+        to: [process.env.BOOKING_EMAIL_TO || "Neefstudios.uk@gmail.com"],
         reply_to: email,
         subject: `Booking enquiry: ${service.replace(/[\r\n]+/g, " ")}`,
         text: [

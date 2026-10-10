@@ -26,6 +26,7 @@
 │   ├── fonts/               Self-hosted webfonts (all SIL OFL)
 │   │   ├── fraunces-latin.woff2       Display (variable 300-600)
 │   │   ├── sora/sora-latin-var.woff2  Body (variable 100-800)
+│   │   ├── signature/kaushan-script-latin.woff2  Footer signature (brush script)
 │   │   └── inter-latin.woff2          Fallback (variable 400-700)
 │   ├── img/webp/            Photography, semantic names + width suffix
 │   │   ├── family-*-480/900/1600.webp
@@ -41,9 +42,10 @@
 ├── sitemap.xml
 ├── site.js                  All site behaviour
 ├── styles.css               All styles
-└── docs/                    Project documentation
+├── docs/                    Project documentation
     ├── PROJECT-STRUCTURE.md
     ├── FONT-SOURCING.md
+    ├── ADDING-VIDEO.md
     └── DEPLOYMENT.md
 ```
 

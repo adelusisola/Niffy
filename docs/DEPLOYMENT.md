@@ -10,7 +10,7 @@ The booking form sends enquiries through the Netlify function at `/.netlify/func
 
 - `RESEND_API_KEY`: Resend API key (keep it private; never put it in client-side code).
 - `RESEND_FROM_EMAIL`: verified sender, for example `Neef Studios <bookings@your-verified-domain>`.
-- `BOOKING_EMAIL_TO`: optional destination address; defaults to `hello@neefstudios.co.uk`.
+- `BOOKING_EMAIL_TO`: optional destination address; defaults to `Neefstudios.uk@gmail.com`.
 
 Redeploy after adding or changing environment variables. Until those values are configured, the function returns an unavailable response and the form opens a prefilled email draft as a fallback. Test a real submission on the deployed HTTPS site.
 
