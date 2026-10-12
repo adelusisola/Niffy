@@ -1601,10 +1601,15 @@ body:has(.site-header.is-condensed) .work-filters {
 
 .testimonial .body-copy {
     color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-small);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .testimonial .text-link {
     color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .testimonial blockquote {
@@ -1614,17 +1619,6 @@ body:has(.site-header.is-condensed) .work-filters {
     font-size: clamp(30px, 5vw, 62px);
     letter-spacing: -0.04em;
     line-height: 1.15;
-}
-
-.testimonial .body-copy {
-    font-size: var(--text-small);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.testimonial .text-link {
-    text-decoration: underline;
-    text-underline-offset: 4px;
 }
 
 .contact {
@@ -2560,7 +2554,6 @@ html:not(.js) .faq-item__inner {
     pointer-events: none;
 }
 
-.testimonial-card:hover::after,
 .testimonial-card:focus-within::after {
     opacity: 0.12;
     transform: translateY(0) rotate(-3deg);
@@ -2584,9 +2577,19 @@ html:not(.js) .faq-item__inner {
     transition: transform 320ms var(--ease-soft), box-shadow 320ms var(--ease-soft);
 }
 
-.testimonial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow);
+/* Hover-only affordance: gate the lift behind a real pointer so touch
+   devices don't emulate (and stick on) the hover state. */
+
+@media (hover: hover) and (pointer: fine) {
+    .testimonial-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+    }
+
+    .testimonial-card:hover::after {
+        opacity: 0.12;
+        transform: translateY(0) rotate(-3deg);
+    }
 }
 
 .testimonial-card blockquote {
@@ -3024,6 +3027,16 @@ html:not(.js) .quote-reveal blockquote {
         gap: 38px;
     }
 
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    /* Oversized index numeral is too dominant once cards are full-width */
+    .testimonial-card::after {
+        font-size: 4.4rem;
+    }
+
     .packages-grid {
         grid-template-columns: 1fr;
         gap: 22px;
@@ -3137,9 +3150,12 @@ html:not(.js) .quote-reveal blockquote {
         text-align: center;
     }
 
-    /* Nav becomes a tidy stacked list */
+    /* Nav becomes a tidy stacked list.
+       align-self: stretch makes each link span the footer width so the
+       divider borders run edge to edge instead of stopping at the text. */
     .site-footer > a.text-link {
         display: block;
+        align-self: stretch;
         padding: 13px 0;
         border-bottom: 1px solid var(--line);
         letter-spacing: 0.1em;
